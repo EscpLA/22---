@@ -1,0 +1,9 @@
+<!-- index.wxml -->
+<view class="container">
+    <!-- 显示默认图片 -->
+    <image src="{{userInfo.avatarUrl == null ? '../../image/nameless-King.jpg' : userInfo.avatarUrl}}" mode="aspectFill"></image>
+    <!-- 显示默认昵称 -->
+    <text>{{ userInfo.nickName == null ? '你好' : userInfo.nickName }}</text>
+    <!-- 按钮绑定点击事件 -->
+    <button bindtap="getUserProfile">点击获取头像和昵称</button>
+</view>
