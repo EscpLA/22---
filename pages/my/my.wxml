@@ -1,0 +1,26 @@
+<!--pages/my/my.wxml-->
+<view id="myLogin">
+    <block wx:if="{{isLogin}}">
+        <image id="myIcon" src="{{ src }}">
+        </image>
+        <text id="nickName">{{ nickName }}</text>
+    </block>
+    <block wx:else>
+        <button plain bindtap="getUserProfile">未登录 点击登录</button>
+    </block>
+</view>
+
+<!-- 我的收藏 -->
+<view id="myFavorites">
+    <text>我的收藏 {{FavorCount}}</text>
+    <!-- 收藏的新闻列表 -->
+    <view id="news-list">
+        <view class="list-item" wx:for="{{newsList}}" wx:for-item="news" wx:key="index" bindtap="goToDetail" data-id="{{news.id}}">
+            <image src="{{ news.poster }}" mode="widthFix"></image>
+            <view class="right">
+                <text>🔷{{ news.title }}</text>
+                <text> -- {{news.add_date}}</text>
+            </view>
+        </view>
+    </view>
+</view>
